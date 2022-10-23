@@ -3,8 +3,12 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    position: sticky
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
   }
+
   
   body {
     font-family: 'Raleway', sans-serif;
@@ -155,21 +159,19 @@ header {
    .footer__links a {
       margin-bottom: 15px;
    }
-      .about_image {
+      .about__images {
         width: 500px;
       }
       
      
-      .about_sun-image {
+      .about__sun-image {
         width: 100px;
         height: 100px;
+        animation: rotation 10s infinite linear;
         position: absolute;
-        animation: spin 1.5s ease-in-out infinite;
-        animation-timing-function: linear;
-        animation-duration: 10s;
       }
 
-      .about{
+      .about {
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -180,12 +182,12 @@ header {
         background-position: cover;
       }
 
-      .about h1{
+      .about h1 {
         font-size: 70px;
         line-height: 76px;
       }
 
-      .about p{
+      .about p {
         font-size: 18px;
         line-height: 30px;
         opacity: 0.8px;
@@ -197,22 +199,97 @@ header {
         margin-top: 20px;
       }
 
-      .about_info{
+      .about__info animate__animated animate__fadeInLeft animate__slow 
+{
         max-width: 550px;
       }
       
       .form__container {
         width: 550px;
       }
-      @keyframes spin{
-        0%{
-          transform: rotate(0deg);
+      
+      @keyframes rotation {
+        0% {
+            transform: rotate(0);
         }
       
-        100%{
-          transform: rotate(360deg);
+        100% {
+            transform: rotate(360deg);
         }
-      }
+     }
+     
+     /* Планшеты */
+@media (max-width: 1024px) {
+  .about {
+      padding: 115px 20px;
+  }
+
+  .about h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+
+  .about__image {
+      width: 280px;
+  }
+
+  .about__sun-image {
+      width: 75px;
+      height: 75px;
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 720px) {
+  header {
+      padding: 10px;
+  }
+
+  .header__logo {
+      height: 20px;
+  }
+
+  header a {
+      margin-right: 10px;
+  }
+
+  .about {
+      flex-direction: column-reverse;
+      padding: 50px 10px;
+  }
+
+  .about h1 {
+      font-size: 36px;
+      line-height: 40px;
+  }
+
+  .about__image {
+      width: 280px;
+  }
+
+  .about__sun-image {
+      width: 75px;
+      height: 75px;
+  }
+
+  .form {
+      padding: 50px 10px;
+  }
+
+  .form h1 {
+      font-size: 36px;
+  }
+
+  footer {
+      padding: 50px 10px;
+  }
+
+  .footer__container {
+      flex-direction: column;
+  }
+}
+     
+        
+     
       
   
-}
